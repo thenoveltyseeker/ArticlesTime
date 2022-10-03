@@ -5,20 +5,25 @@ Articles time is an Android app that will fetch and display the most popular art
 
 ## App Architecture
 
-The app is designed using MVVM architecture for uni directional data flow and Clean architecture for proper separation of concerns usind layered structure
+The app is designed using MVVM architecture for uni directional data flow and Clean architecture for proper separation of concerns using layered structure
 
 ## Basic working 
 
-The app follows a single activity structure
+The app follows a single activity structure.
 There are two screens - List screen and Details Screen
 
-[List screen](https://user-images.githubusercontent.com/14359651/193552645-ebb770f6-d639-488a-a3b7-72926077be20.png)
-[Details screen](https://user-images.githubusercontent.com/14359651/193552386-b14c6b6d-6763-4b12-80bd-9f198b290ff7.png)
+[List screen ](https://user-images.githubusercontent.com/14359651/193558039-18066a7d-e65e-4344-bfb2-bddf1b2b22a4.png)
+
+[Details screen-1](https://user-images.githubusercontent.com/14359651/193558229-a736f814-7f10-4ceb-b1a9-7dd535491935.png)
+
+[Details screen-2](https://user-images.githubusercontent.com/14359651/193552386-b14c6b6d-6763-4b12-80bd-9f198b290ff7.png)
 
 #### Layers 
 
 Data layer - This holds the Data source (Remote and Local), their DTOs and Repository implementation
+
 Domain layer - DTO to domain mappers, Usecases and Repoistory interface (IoC)
+
 Presentation layer - Viewmodels, adapters, Fragments and everything UI
 
 #### Data flow
@@ -52,18 +57,18 @@ View -> ViewModel -> Usecase -> Repo -> Datasource
 ![image](https://user-images.githubusercontent.com/14359651/193554736-9be9aa32-e016-4809-8a63-b63a716b937b.png)
 
 - Now give a name for the suite
-- Add the Run configurations highlighted in the screenshot in the Run field
+- Add the Run configurations highlighted in the screenshot in the Run field.
 - Select the project root folder for Gradle project field
 - Now Apply, then OK.
-- Now run the configuration like we run the app
+- Now run the configuration: instead of choosing app as configuration choose our test config and click the play button.
 
 ![image](https://user-images.githubusercontent.com/14359651/193555003-522230fc-700f-441a-be86-418677cd14ec.png)
 
-- Once you run configuration the test result will be shown like above
-- Click on the highlighted vertical up arrow to export the test report. (You can also choose the gradle test report)
+- Once you run the configuration the test results will be shown like above.
+- Click on the highlighted vertical up arrow to export the test report. (You can also choose the gradle test report - gradle icon)
 
 ![image](https://user-images.githubusercontent.com/14359651/193556157-a4e5ed44-68a5-4986-8ad7-c4a0c7151e11.png)
 
-- For coverage run the config using the highlighted sheild icon.
+- For Test coverage, run the created test configuration using the highlighted sheild icon in the above image.
 - Once the suite is updated, click the vertical up arrow (highlighted) to generate the coverage report.
 
