@@ -44,14 +44,23 @@ View -> ViewModel -> Usecase -> Repo -> Datasource
 ## How to Build and Run the app
 - Clone the project using the link available in the repo
 ![image](https://user-images.githubusercontent.com/14359651/193556947-bad02f6a-819d-44eb-9f44-4ede1b899f78.png)
+
 - Import the cloned project in Android studio: File -> New -> Import project
+
+![Screenshot (19)](https://user-images.githubusercontent.com/14359651/193573735-6952d18e-97c7-414a-9a5a-ad5025018a0b.png)
+
 - Choose the cloned repo directory
 - Let Gradle download the necessary dependencies
 - Once all the processes are completed, build and run the app using the Green Play button at the top bar of Android studio.
 
+![image](https://user-images.githubusercontent.com/14359651/193573491-947e39c9-bdac-4df8-b490-70938b11ec2f.png)
+
 ## How to run tests
 
 - Choose the edit configuration at the top (from where we run the app)
+
+![Screenshot (14)](https://user-images.githubusercontent.com/14359651/193573181-134d8a84-2899-41b2-bb3b-900723d3fbca.png)
+
 - Click on the "+" button (highlighted in image) and select Gradle
 
 ![image](https://user-images.githubusercontent.com/14359651/193554736-9be9aa32-e016-4809-8a63-b63a716b937b.png)
