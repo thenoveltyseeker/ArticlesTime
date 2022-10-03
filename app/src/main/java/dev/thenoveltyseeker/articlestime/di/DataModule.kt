@@ -17,7 +17,7 @@ import dev.thenoveltyseeker.articlestime.data.datasource.remote.RemoteDataSource
 import dev.thenoveltyseeker.articlestime.domain.ArticlesRepository
 import dev.thenoveltyseeker.articlestime.domain.mapper.ArticlesLocalDtoMapper
 import dev.thenoveltyseeker.articlestime.domain.mapper.ArticlesRemoteDtoMapper
-import dev.thenoveltyseeker.articlestime.data.datasource.local.PopularArticlesToLocalDtoMapper
+import dev.thenoveltyseeker.articlestime.data.datasource.local.ArticlesToLocalDtoMapper
 import kotlinx.coroutines.CoroutineDispatcher
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -55,7 +55,7 @@ class DataModule {
     @Provides
     fun provideLocalDataSource(
         articlesDao: ArticlesDao,
-        articlesToLocalDtoMapper: PopularArticlesToLocalDtoMapper
+        articlesToLocalDtoMapper: ArticlesToLocalDtoMapper
     ): LocalDataSource {
         return LocalDataSource(
             articlesDao = articlesDao,
@@ -64,8 +64,8 @@ class DataModule {
     }
 
     @Provides
-    fun provideArticleToLocalDtoMapper(): PopularArticlesToLocalDtoMapper {
-        return PopularArticlesToLocalDtoMapper()
+    fun provideArticleToLocalDtoMapper(): ArticlesToLocalDtoMapper {
+        return ArticlesToLocalDtoMapper()
     }
 
     @Provides

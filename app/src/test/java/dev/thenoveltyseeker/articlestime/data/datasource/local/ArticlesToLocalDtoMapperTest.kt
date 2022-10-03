@@ -6,18 +6,18 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 
-class PopularArticlesToLocalDtoMapperTest {
-    private lateinit var popularArticlesToLocalDtoMapper: PopularArticlesToLocalDtoMapper
+class ArticlesToLocalDtoMapperTest {
+    private lateinit var articlesToLocalDtoMapper: ArticlesToLocalDtoMapper
 
     @Before
     fun setUp() {
-        popularArticlesToLocalDtoMapper = PopularArticlesToLocalDtoMapper()
+        articlesToLocalDtoMapper = ArticlesToLocalDtoMapper()
     }
 
     @Test
     fun `when map called on articles list return LocalDto list`() {
         val mockData = MockResponse.popularArticlesList
-        val localDto = popularArticlesToLocalDtoMapper.map(mockData)
+        val localDto = articlesToLocalDtoMapper.map(mockData)
 
         assertTrue(localDto.size == mockData.size)
         with(localDto.first()) {

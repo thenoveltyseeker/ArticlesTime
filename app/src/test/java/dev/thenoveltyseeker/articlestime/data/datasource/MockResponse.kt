@@ -1,6 +1,6 @@
 package dev.thenoveltyseeker.articlestime.data.datasource
 
-import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.PopularArticleLocalDto
+import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.ArticlesLocalDto
 import dev.thenoveltyseeker.articlestime.data.model.ArticleResponse
 import dev.thenoveltyseeker.articlestime.data.model.Media
 import dev.thenoveltyseeker.articlestime.data.model.MediaMetadata
@@ -16,7 +16,7 @@ object MockResponse {
 
     val emptyPopularArticle = emptyList<PopularArticle>()
     val emptyFlow = emptyFlow<List<PopularArticle>>()
-    val emptyLocalDtoFlow = emptyFlow<List<PopularArticleLocalDto>>()
+    val emptyLocalDtoFlow = emptyFlow<List<ArticlesLocalDto>>()
     val emptyListFlow = flow { emit(emptyPopularArticle) }
 
     val popularArticlesList = listOf(
@@ -94,7 +94,7 @@ object MockResponse {
         )
     )
     val popularArticlesLocalDtoList = listOf(
-        PopularArticleLocalDto(
+        ArticlesLocalDto(
             id = "1",
             title = "Article 1",
             details = "Article 1 abstract",
@@ -103,7 +103,7 @@ object MockResponse {
             date = "02-10-22",
             author = "Ben"
         ),
-        PopularArticleLocalDto(
+        ArticlesLocalDto(
             id = "2",
             title = "Article 2",
             details = "Article 2 abstract",

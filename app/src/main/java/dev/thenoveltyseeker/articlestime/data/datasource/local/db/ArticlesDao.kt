@@ -4,8 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.PopularArticleLocalDto
-import dev.thenoveltyseeker.articlestime.domain.model.PopularArticle
+import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.ArticlesLocalDto
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Singleton
 
@@ -14,10 +13,10 @@ import javax.inject.Singleton
 interface ArticlesDao {
 
     @Query("SELECT * FROM ${DbConstants.POPULAR_ARTICLES_TABLE}")
-    fun getPopularArticles(): Flow<List<PopularArticleLocalDto>>
+    fun getPopularArticles(): Flow<List<ArticlesLocalDto>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertArticles(articles: List<PopularArticleLocalDto>)
+    suspend fun insertArticles(articles: List<ArticlesLocalDto>)
 
     @Query("SELECT COUNT(*) FROM ${DbConstants.POPULAR_ARTICLES_TABLE}")
     suspend fun articlesRowCount(): Int

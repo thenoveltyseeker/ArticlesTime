@@ -36,8 +36,6 @@ class ArticlesRepositoryImpl @Inject constructor(
         }
     }
 
-    private suspend fun isCacheEmpty() = !localDataSource.isCacheAvailable()
-
     private suspend fun fetchPopularArticlesFromRemote() {
         val latestPopularArticles = articlesRemoteDtoMapper.map(
             remoteDataSource.fetchPopularArticles()
@@ -47,6 +45,8 @@ class ArticlesRepositoryImpl @Inject constructor(
             updateCache(latestPopularArticles)
         }
     }
+
+    private suspend fun isCacheEmpty() = !localDataSource.isCacheAvailable()
 
     private suspend fun handleError(exception: Exception) {
         when (exception) {

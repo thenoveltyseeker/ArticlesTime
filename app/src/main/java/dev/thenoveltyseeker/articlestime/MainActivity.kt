@@ -10,10 +10,10 @@ import dev.thenoveltyseeker.articlestime.databinding.ActivityMainBinding
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val binding by lazy {
+    private val binding by lazy(LazyThreadSafetyMode.NONE) {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    private val navHostFragment by lazy {
+    private val navHostFragment by lazy(LazyThreadSafetyMode.NONE) {
         binding.navHostFragment.getFragment() as NavHostFragment
     }
 

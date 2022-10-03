@@ -1,14 +1,14 @@
 package dev.thenoveltyseeker.articlestime.data.datasource.local
 
-import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.PopularArticleLocalDto
+import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.ArticlesLocalDto
 import dev.thenoveltyseeker.articlestime.domain.ListDataMapper
 import dev.thenoveltyseeker.articlestime.domain.model.PopularArticle
 
-class PopularArticlesToLocalDtoMapper : ListDataMapper<PopularArticle, PopularArticleLocalDto> {
+class ArticlesToLocalDtoMapper : ListDataMapper<PopularArticle, ArticlesLocalDto> {
 
-    override fun map(list: List<PopularArticle>): List<PopularArticleLocalDto> {
+    override fun map(list: List<PopularArticle>): List<ArticlesLocalDto> {
         return list.map {
-            PopularArticleLocalDto(
+            ArticlesLocalDto(
                 id = it.id,
                 title = it.title,
                 details = it.details,

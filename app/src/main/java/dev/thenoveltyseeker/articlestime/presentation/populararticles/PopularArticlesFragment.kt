@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.thenoveltyseeker.articlestime.databinding.FragmentPopularArticlesBinding
 import dev.thenoveltyseeker.articlestime.domain.model.PopularArticle
+import dev.thenoveltyseeker.articlestime.presentation.populararticles.adapter.ArticleSelectListener
+import dev.thenoveltyseeker.articlestime.presentation.populararticles.adapter.ArticlesAdapter
 
 class PopularArticlesFragment : Fragment(), ArticleSelectListener {
     private var binding: FragmentPopularArticlesBinding? = null
@@ -45,23 +47,27 @@ class PopularArticlesFragment : Fragment(), ArticleSelectListener {
     }
 
     private fun updateState(state: State) {
-        when(state) {
+        when (state) {
             is State.ArticlesSuccess -> {
-                binding?.progress?.visibility = View.GONE
+                shouldShowProgress(isVisible = false)
                 articlesAdapter.submitList(state.articles)
             }
             is State.ArticlesError -> {
-                binding?.progress?.visibility = View.GONE
+                shouldShowProgress(isVisible = false)
                 Toast.makeText(context, state.errorMessage, Toast.LENGTH_SHORT).show()
             }
-            State.Loading -> binding?.progress?.visibility = View.VISIBLE
+            State.Loading -> shouldShowProgress(isVisible = true)
         }
+    }
+
+    private fun shouldShowProgress(isVisible: Boolean) {
+        binding?.progress?.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 
     override fun onArticleSelected(article: PopularArticle) {
         val action = PopularArticlesFragmentDirections.actionToArticleDetailsFragment(
             article,
-            if(article.date.isNullOrEmpty()) "Article Details" else article.date
+            if (article.date.isNullOrEmpty()) "Article Details" else article.date
         )
         findNavController().navigate(action)
     }

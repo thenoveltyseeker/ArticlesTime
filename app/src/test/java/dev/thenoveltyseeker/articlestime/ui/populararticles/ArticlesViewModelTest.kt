@@ -2,7 +2,6 @@ package dev.thenoveltyseeker.articlestime.ui.populararticles
 
 import dev.thenoveltyseeker.articlestime.MainDispatcherRule
 import dev.thenoveltyseeker.articlestime.data.datasource.MockResponse
-import dev.thenoveltyseeker.articlestime.domain.ArticlesRepository
 import dev.thenoveltyseeker.articlestime.domain.usecase.PopularArticlesUseCase
 import dev.thenoveltyseeker.articlestime.presentation.populararticles.ArticlesViewModel
 import dev.thenoveltyseeker.articlestime.presentation.populararticles.State

@@ -1,7 +1,6 @@
 package dev.thenoveltyseeker.articlestime.domain.mapper
 
 import dev.thenoveltyseeker.articlestime.data.datasource.MockResponse
-import dev.thenoveltyseeker.articlestime.data.datasource.local.PopularArticlesToLocalDtoMapper
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

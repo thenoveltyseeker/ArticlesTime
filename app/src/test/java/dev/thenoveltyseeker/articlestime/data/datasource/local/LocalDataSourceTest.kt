@@ -3,7 +3,7 @@ package dev.thenoveltyseeker.articlestime.data.datasource.local
 import dev.thenoveltyseeker.articlestime.MainDispatcherRule
 import dev.thenoveltyseeker.articlestime.data.datasource.MockResponse
 import dev.thenoveltyseeker.articlestime.data.datasource.local.db.ArticlesDao
-import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.PopularArticleLocalDto
+import dev.thenoveltyseeker.articlestime.data.datasource.local.db.dto.ArticlesLocalDto
 import dev.thenoveltyseeker.articlestime.domain.model.PopularArticle
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -26,7 +26,7 @@ class LocalDataSourceTest {
     private lateinit var articlesDao: ArticlesDao
 
     @MockK
-    private lateinit var articlesToLocalDtoMapper: PopularArticlesToLocalDtoMapper
+    private lateinit var articlesToLocalDtoMapper: ArticlesToLocalDtoMapper
 
     private lateinit var localDataSource: LocalDataSource
 
@@ -72,7 +72,7 @@ class LocalDataSourceTest {
 
         localDataSource.updateCache(MockResponse.popularArticlesList)
         val popularArticleSlot = slot<List<PopularArticle>>()
-        val localDtoSlot = slot<List<PopularArticleLocalDto>>()
+        val localDtoSlot = slot<List<ArticlesLocalDto>>()
         coVerify {
             articlesToLocalDtoMapper.map(capture(popularArticleSlot))
             articlesDao.insertArticles(capture(localDtoSlot))
